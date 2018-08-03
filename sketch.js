@@ -30,6 +30,7 @@ function setup() {
 
 }
 
+
 function draw() {
 
   background(51);
@@ -38,7 +39,6 @@ function draw() {
   rect(width - 30, p2, 10, 100);
   /* draw ball */
   ellipse(ball.x, ball.y, 20);
-
 
   /* draw score board */
   //width and height
@@ -68,6 +68,7 @@ function handleBall() {
     if (ball.x <= 10) {
       p2S++;
       reset();
+      checkScores();
       return;
     }
     //right paddle
@@ -75,7 +76,7 @@ function handleBall() {
 
       if (ballV.x < 0) {
         ballV.x *= -1;
-        ballV.mult(random(1, 1.1));
+        ballV.mult(random(1, 1.5));
       }
     }
     } else if (ball.x >= width - 30) {
@@ -84,6 +85,7 @@ function handleBall() {
       if (ball.x >= width - 10) {
         p1S++;
         reset();
+        checkScores();
         return;
       }
 
@@ -92,10 +94,42 @@ function handleBall() {
 
         if (ballV.x > 0) {
         ballV.x *= -1;
-        ballV.mult(random(1, 1.1));
+        ballV.mult(random(1, 1.5));
       }
       }
     }
+}
+
+function checkScores() {
+  if (p1S === 2 || p2S === 2)
+  {
+    postGame()
+    alert("Game over!");
+    window.location.reload()
+  }
+}
+
+let userIds = {
+  player1: undefined,
+  player2: undefined
+}
+
+function postGame(){
+  console.log(userIds);
+  const url = 'http://localhost:3000/api/v1/games'
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      "Accept" : "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      user_one_id: userIds.player1,
+      user_two_id: userIds.player2,
+      user_one_score: p1S,
+      user_two_score: p2S
+    })
+  })
 }
 
 

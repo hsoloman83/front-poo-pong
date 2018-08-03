@@ -5,8 +5,10 @@ html, body {
   color: black;
 }
 
+
+
 body {
-  margin: 0;
+  /* margin: 0; */
   display: flex;
   /* This centers our sketch horizontally. */
   justify-content: center;
@@ -14,15 +16,15 @@ body {
   align-items: center;
 }
 
-#top-five {
+#secret-poo-div {
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   color: rgb(51, 51, 51);
 }
 
 #player1 {
-  position: absolute;
-  left: 100px;
+  position: fixed;
+  left: 130px;
   bottom: 500px;
 }
 
@@ -40,3 +42,69 @@ body {
   font-size: 32px;
 
 }
+
+#new-game-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 50px;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+#banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 200px;
+}
+/* 
+
+.sky {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: auto;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+
+.emoji {
+  display: block;
+  position: relative;
+  top: -10px;
+  animation: rain linear infinite;
+  transform: translate3d(0,0,0);
+}
+
+.poo1 {
+  animation-duration: 4s;
+}
+
+.poo2 {
+  animation-duration: 5s;
+}
+
+.poo3 {
+  animation-duration: 3s;
+}
+
+.poo4 {
+  animation-duration: 6s;
+}
+
+.poo5 {
+  animation-duration: 4.5s;
+}
+
+@keyframes rain {
+  from { top: 0 }
+  to   { top: 100% }
+} */

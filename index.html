@@ -2,21 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <script type="text/javascript" src="p5.min.js"></script>
+      <script type="text/javascript" src="index.js"></script>
       <script type="text/javascript" src="sketch.js"></script>
+
+      <!-- <script type="text/javascript" src="p5.min.js"></script> -->
        <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="poopfile.css" type="text/css" id="poop-stylesheet"/>
     <title></title>
   </head>
   <body>
     <div id="title">
-      <h1>PooPong!</h1>
+      <h1>Pong!</h1>
+      <input type="button" id="start-game" value="Ready to play? HIT IT">
+    </div>
+    <div>
+      <input type="button" id="new-game-button" value="Start again" onClick="window.location.reload()">
+    </div>
     </div>
     <div id="player1">
       <p>Player 1</p>
       <p>Enter your name:</p>
       <form action="">
         <input type="text" name="username" placeholder="Player 1">
-        <input type="submit" value="Sign in!">
+        <input type="submit" id="playerSubmitOne" value="Sign in!">
       </form>
     </div>
 
@@ -25,13 +33,33 @@
       <p>Enter your name:</p>
       <form action="">
         <input type="text" name="username" placeholder="Player 2">
-        <input type="submit" value="Sign in!">
+        <input type="submit" id="playerSubmitTwo" value="Sign in!">
       </form>
     </div>
 
-    <div id="top-five">
-    <h3>Username |  High score</h3>
-    </div>
 
+    <!-- <div id="secret-poo-div">
+    <h3>
+      <input type="button" id="secret-poo-button" value="Click for a secret surpise....!">
+    </h3>
+  </div> -->
+
+  <div class="sky" id="poops">
+    <div class="emoji poo1">
+      💩
+    </div>
+    <div class="emoji poo2">
+      💩
+    </div>
+    <div class="emoji poo3">
+      💩
+    </div>
+    <div class="emoji poo4">
+      💩
+    </div>
+    <div class="emoji poo5">
+      💩
+    </div>
+  </div>
   </body>
 </html>
